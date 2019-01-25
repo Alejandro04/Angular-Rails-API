@@ -1,0 +1,11 @@
+<div class="container">
+  <div>
+    <a href="subcategory/new" class="btn btn-warning btn-create">
+      Create SubCategory
+    </a>
+  </div>
+  <h4 class="title-section">SubCategories <a href="/dashboard" class="btn btn-link">Back</a> </h4>
+  <div class="list-group" *ngFor="let subcategory of subcategories">
+    <div class="list-group-item">{{subcategory.name}}</div>
+  </div>
+</div>
