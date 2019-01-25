@@ -34,6 +34,10 @@ export class ConnectionService {
     return this._http.get<SubCategory[]>(`${this.API_URL}/subcategories`, { headers: this.headers })
   }
 
+  addSubCategory(item){
+    return this._http.post(`${this.API_URL}/subcategories`, item, {headers: this.headers}).subscribe(response => console.log(response));
+  }
+
   authUser() {
     return this._http.post<User[]>(this.LOGIN_URL,
       {
