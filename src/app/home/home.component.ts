@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private connection: ConnectionService) { }
 
   ngOnInit() {
-    return this.connection.getPosts()
+    this.connection.getPosts()
       .subscribe(data => this.posts = data)
   }
 
