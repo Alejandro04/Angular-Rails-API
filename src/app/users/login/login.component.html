@@ -1,0 +1,26 @@
+<div class="form-login">
+    <form (ngSubmit)="add()">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email"
+          class="form-control"
+          placeholder="Email"
+          name="email"
+          [(ngModel)]="item.email"
+        />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password"
+          class="form-control"
+          placeholder="Password"
+          name="password"
+          [(ngModel)]="item.password"
+        />
+      </div>
+      <button type="submit" class="btn btn-success btn-login">Login</button>
+    </form>
+    <div class="access-data">
+      <p>superadmin@superadmin.com | 12345678</p>
+    </div>
+</div>

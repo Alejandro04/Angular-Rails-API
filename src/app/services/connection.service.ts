@@ -35,46 +35,47 @@ export class ConnectionService {
     return this._http.get<SubCategory[]>(`${this.API_URL}/subcategories`, { headers: this.headers })
   }
 
-  addCategory(item){
-    return this._http.post(`${this.API_URL}/categories`, item, {headers: this.headers})
-    .subscribe(
-      data => {
-        console.log('success', data),
-        alert("Success");
-       // swal("Success")
-      },
-      error =>{
-        console.log('Error', error)
-      //  swal("Error")
-      },
-    );
+  addCategory(item) {
+    return this._http.post(`${this.API_URL}/categories`, item, { headers: this.headers })
+      .subscribe(
+        data => {
+          console.log('success', data),
+            alert("Success");
+          //swal("Success")
+        },
+        error => {
+          console.log('Error', error)
+          //  swal("Error")
+        },
+      );
   }
 
-  addSubCategory(item){
-    return this._http.post(`${this.API_URL}/subcategories`, item, {headers: this.headers})
-    .subscribe(
-      data => {
-        console.log('success', data),
-        alert("Success");
-       // swal("Success")
-      },
-      error =>{
-        console.log('Error', error)
-      //  swal("Error")
-      },
-    );
+  addSubCategory(item) {
+    return this._http.post(`${this.API_URL}/subcategories`, item, { headers: this.headers })
+      .subscribe(
+        data => {
+          console.log('success', data),
+            alert("Success");
+          // swal("Success")
+        },
+        error => {
+          console.log('Error', error)
+          // swal("Error")
+        },
+      );
   }
 
-  authUser() {
-    return this._http.post<User[]>(this.LOGIN_URL,
-      {
-        email: 'superadmin@superadmin.com',
-        password: '12345678',
-      },
+  authUser(item) {
+    return this._http.post<User[]>(this.LOGIN_URL, item,
       { observe: 'response' }).subscribe(res => {
         localStorage.setItem('client', res.headers.get('client'));
         localStorage.setItem('uid', res.headers.get('uid'));
         localStorage.setItem('access-token', res.headers.get('access-token'));
+
+        if (res.status == 200) {
+          window.location.href = '/dashboard'
+        }
+        
       });
   }
 }

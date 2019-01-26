@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user.model';
-import { ConnectionService } from '../services/connection.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,12 +6,10 @@ import { ConnectionService } from '../services/connection.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  user: User[]
 
-  constructor(private connection: ConnectionService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.connection.authUser();
   }
 
 }
