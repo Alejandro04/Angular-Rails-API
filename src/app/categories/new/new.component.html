@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="form-login">
+      <h3> Create a new Category </h3>
+      <form (ngSubmit)="add()">
+        <div class="form-group">
+          <label>Name</label>         
+          <input type="text" placeholder="Name" 
+            name="name" 
+            class="form-control"
+            [(ngModel)]="item.name"
+          >      
+        </div>
+        <button type="submit" class="btn btn-success" >Create</button>
+        <a href="/categories" class="btn btn-link">Back</a>
+      </form>
+    </div>
+</div>

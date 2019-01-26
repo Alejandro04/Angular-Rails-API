@@ -35,16 +35,32 @@ export class ConnectionService {
     return this._http.get<SubCategory[]>(`${this.API_URL}/subcategories`, { headers: this.headers })
   }
 
+  addCategory(item){
+    return this._http.post(`${this.API_URL}/categories`, item, {headers: this.headers})
+    .subscribe(
+      data => {
+        console.log('success', data),
+        alert("Success");
+       // swal("Success")
+      },
+      error =>{
+        console.log('Error', error)
+      //  swal("Error")
+      },
+    );
+  }
+
   addSubCategory(item){
     return this._http.post(`${this.API_URL}/subcategories`, item, {headers: this.headers})
     .subscribe(
       data => {
         console.log('success', data),
-        swal("Success")
+        alert("Success");
+       // swal("Success")
       },
       error =>{
-        console.log('success', error),
-        swal("Error")
+        console.log('Error', error)
+      //  swal("Error")
       },
     );
   }

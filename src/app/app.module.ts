@@ -10,11 +10,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CategoryComponent } from './categories/list/list.component';
 import { SubCategoryComponent } from './subcategories/list/list.component';
 import { NewSubCategory } from './subcategories/new/new.component';
+import { NewCategory} from './categories/new/new.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'categories', component: CategoryComponent },
+  { path: 'category/new', component: NewCategory },
   { path: 'subcategories', component: SubCategoryComponent },
   { path: 'subcategory/new', component: NewSubCategory },
 ];
@@ -27,6 +29,7 @@ const appRoutes: Routes = [
     CategoryComponent,
     SubCategoryComponent,
     NewSubCategory,
+    NewCategory,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
