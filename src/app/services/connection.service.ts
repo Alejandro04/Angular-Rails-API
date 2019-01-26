@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Post } from '../models/post.model';
 import { User } from '../models/user.model';
 import { Category } from '../models/category.model';
 import { SubCategory } from '../models/subcategory.model';
+import * as swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,17 @@ export class ConnectionService {
   }
 
   addSubCategory(item){
-    return this._http.post(`${this.API_URL}/subcategories`, item, {headers: this.headers}).subscribe(response => console.log(response));
+    return this._http.post(`${this.API_URL}/subcategories`, item, {headers: this.headers})
+    .subscribe(
+      data => {
+        console.log('success', data),
+        swal("Success")
+      },
+      error =>{
+        console.log('success', error),
+        swal("Error")
+      },
+    );
   }
 
   authUser() {

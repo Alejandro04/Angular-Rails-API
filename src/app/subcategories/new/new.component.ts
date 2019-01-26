@@ -16,6 +16,7 @@ export class NewSubCategory implements OnInit {
   constructor(private service: ConnectionService) { }
 
   ngOnInit() {
+    
   }
 
   add() {
