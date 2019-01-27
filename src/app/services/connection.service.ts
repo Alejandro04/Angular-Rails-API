@@ -65,6 +65,21 @@ export class ConnectionService {
       );
   }
 
+  addPost(item) {
+    return this._http.post(`${this.API_URL}/articles`, item, { headers: this.headers })
+      .subscribe(
+        data => {
+          console.log('success', data),
+            alert("Success");
+          // swal("Success")
+        },
+        error => {
+          console.log('Error', error)
+          // swal("Error")
+        },
+      );
+  }
+
   authUser(item) {
     return this._http.post<User[]>(this.LOGIN_URL, item,
       { observe: 'response' }).subscribe(res => {

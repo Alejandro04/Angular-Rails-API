@@ -12,6 +12,8 @@ import { SubCategoryComponent } from './subcategories/list/list.component';
 import { NewSubCategory } from './subcategories/new/new.component';
 import { NewCategory} from './categories/new/new.component';
 import { LoginComponent } from './users/login/login.component';
+import { PostComponent } from './posts/post/post.component';
+import { NewPost } from './posts/new/new.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +23,8 @@ const appRoutes: Routes = [
   { path: 'category/new', component: NewCategory },
   { path: 'subcategories', component: SubCategoryComponent },
   { path: 'subcategory/new', component: NewSubCategory },
+  { path: 'posts', component: PostComponent },
+  { path: 'post/new', component: NewPost },
 ];
 
 @NgModule({
@@ -33,6 +37,8 @@ const appRoutes: Routes = [
     NewSubCategory,
     NewCategory,
     LoginComponent,
+    PostComponent,
+    NewPost,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

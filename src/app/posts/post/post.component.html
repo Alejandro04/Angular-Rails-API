@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    <a href="post/new" class="btn btn-warning btn-create">
+      Create Post
+    </a>
+  </div>
+  <h4 class="title-section">Posts <a href="/dashboard" class="btn btn-link">Back</a> </h4>
+  <div class="list-group" *ngFor="let post of posts">
+    <div class="list-group-item">
+      {{post.title}}
+      <p style="font-size: 10px;">{{post.body}}</p>
+    </div>
+  </div>
+</div>
