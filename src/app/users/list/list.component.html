@@ -6,6 +6,12 @@
   </div>
   <h4 class="title-section">Users <a href="/" class="btn btn-link">Back</a> </h4>
   <div class="list-group" *ngFor="let user of users">
-    <div class="list-group-item">{{user.email}}</div>
+    <div class="list-group-item">
+      <span><strong> Cédula: </strong>{{user.identification_card}}  </span>
+      <span><strong> Nombre: </strong> {{user.first_name}}  </span>
+      <span><strong> Apellido: </strong> {{user.last_name}}  </span>
+      <span><strong> Email:  </strong> {{user.email}}  </span>
+      <span><strong>Teléfono:  </strong> {{user.phone}}  </span>
+    </div>
   </div>
 </div>
