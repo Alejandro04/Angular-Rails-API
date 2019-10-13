@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './users/list/list.component';
+import { NewUser } from './users/new/new.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UserComponent },
+  { path: 'users/new', component: NewUser },
 ];
 
 @NgModule({
@@ -18,6 +20,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     UserComponent,
+    NewUser,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
