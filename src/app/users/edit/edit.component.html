@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="form-login">
+    <h3> Edit new User </h3>
+    <form (ngSubmit)="add()">
+
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" placeholder="Nombre" name="first_name" class="form-control" [(ngModel)]="item.first_name">
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="Apellido" name="last_name" class="form-control" [(ngModel)]="item.last_name">
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="Cédula" name="identification_card" class="form-control"
+          [(ngModel)]="item.identification_card">
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="Email" name="email" class="form-control" [(ngModel)]="item.email">
+      </div>
+
+      <div class="form-group">
+          <input type="text" placeholder="Teléfono" name="phone" class="form-control" [(ngModel)]="item.phone">
+        </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="Contraseña" name="password" class="form-control" [(ngModel)]="item.password">
+      </div>
+
+
+      <div class="form-group">
+        <input type="password" placeholder="Confirmación de contraseña" name="password_confirmation" class="form-control"
+          [(ngModel)]="item.password_confirmation">
+      </div>
+
+
+      <button type="submit" class="btn btn-success">Edit</button>
+      <a href="/users" class="btn btn-link">Back</a>
+    </form>
+  </div>
+</div>
