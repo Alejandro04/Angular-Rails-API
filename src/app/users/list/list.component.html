@@ -1,0 +1,11 @@
+<div class="container">
+  <div>
+    <a href="user/new" class="btn btn-warning btn-create">
+      Create User
+    </a>
+  </div>
+  <h4 class="title-section">Users <a href="/" class="btn btn-link">Back</a> </h4>
+  <div class="list-group" *ngFor="let user of users">
+    <div class="list-group-item">{{user.email}}</div>
+  </div>
+</div>
